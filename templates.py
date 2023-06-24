@@ -20,6 +20,7 @@ Below is the target language and text:
     Target = {translate_to}
     Text = {text}
 """
+
 email_template = """
     Below is an email that may be poorly worded.
     Your goal is to:
@@ -48,3 +49,17 @@ email_template = """
 
     YOUR {dialect} RESPONSE:
 """
+
+summ_text = '''
+Your task is to perform the following actions:
+1 - Summarize the following text delimited by <> with 1 sentence.
+2 - Translate the summary into Arabic.
+
+Use the following format:
+Summary: <summary>
+\nTranslation: <summary translated>
+
+Below is the email, tone, and dialect:
+    Text: <{text}>
+'''
+# {chat_history}
