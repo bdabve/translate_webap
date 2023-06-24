@@ -49,7 +49,7 @@ The app offers the following functionalities:
 
 ## About
 
-This app was created as a demonstration project by [@Elaarbi](bdabve@gmail.com). It utilizes OpenAI's language model and Streamlit framework to provide translation and text summarization capabilities. Feel free to explore and modify the app according to your needs.
+This app was created as a demonstration project by [@Elaarbi](mailto:bdabve@gmail.com). It utilizes OpenAI's language model and Streamlit framework to provide translation and text summarization capabilities. Feel free to explore and modify the app according to your needs.
 
 For more information, visit [LangChain](https://langchain.com/) and [OpenAI](https://openai.com).
 
