@@ -51,6 +51,9 @@ The app offers the following functionalities:
 
 This app was created as a demonstration project by [@Elaarbi](mailto:bdabve@gmail.com). It utilizes OpenAI's language model and Streamlit framework to provide translation and text summarization capabilities. Feel free to explore and modify the app according to your needs.
 
+
+Check out my YouTube channel for more tutorials and projects: [YouTube Channel](https://www.youtube.com/channel/UCAXFZVODN0hCgx3yhrsZZuA)
+
 For more information, visit [LangChain](https://langchain.com/) and [OpenAI](https://openai.com).
 
 ## Dependencies
