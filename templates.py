@@ -62,4 +62,3 @@ Summary: <summary>
 Below is the email, tone, and dialect:
     Text: <{text}>
 '''
-# {chat_history}

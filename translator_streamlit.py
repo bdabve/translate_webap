@@ -7,13 +7,14 @@
 # description   : this is the same translator but with sreamlit
 # ----------------------------------------------------------------------------
 
+import os
 import dotenv
 dotenv.load_dotenv(dotenv.find_dotenv())
-import os
 api_key = os.getenv('OPENAI_API_KEY')
 
 from langchain.llms import OpenAI
 from langchain import PromptTemplate      # , ConversationChain
+# import matplotlib.pyplot as plt
 
 import streamlit as st
 import templates
@@ -21,7 +22,7 @@ import templates
 llm = OpenAI()
 
 
-def ai_translate(llm, input_text, prompt_formated):
+def ai_response(llm, input_text, prompt_formated):
     # this function to get ai response for translation and email pages
     if input_text:
         response = llm(prompt_formated)
@@ -90,7 +91,7 @@ Features
     if button:
         st.markdown('### Translation')
         translation_prompt = prompt.format(translate_to=option_translate_to, text=input_text)
-        translation = ai_translate(llm, input_text, translation_prompt)
+        translation = ai_response(llm, input_text, translation_prompt)
         if translation:
             st.markdown(translation)
 
@@ -113,7 +114,7 @@ def email_generator():
         prompt = PromptTemplate(input_variables=["tone", "dialect", "email"], template=templates.email_template)
         if button:
             prompt_with_email = prompt.format(tone=option_tone, dialect=option_dialect, email=input_text)
-            formatted_email = ai_translate(llm, input_text, prompt_with_email)
+            formatted_email = ai_response(llm, input_text, prompt_with_email)
             st.write(formatted_email)
 
 
@@ -124,7 +125,7 @@ def sum_trans_text():
         prompt = PromptTemplate(input_variables=["text"], template=templates.summ_text)
         if button:
             prompt_with_text = prompt.format(text=input_text)
-            text_summ_translated = ai_translate(llm, input_text, prompt_with_text)
+            text_summ_translated = ai_response(llm, input_text, prompt_with_text)
             st.markdown(text_summ_translated)
 
 
@@ -137,12 +138,9 @@ def about():
 
 if selection == 'Translator':
     translator()
-
 elif selection == 'Email':
     email_generator()
-# --------------# English Teacher #-------------------------- #
 elif selection == 'Summarizing text.':
     sum_trans_text()
-
 elif selection == 'About':
     about()
